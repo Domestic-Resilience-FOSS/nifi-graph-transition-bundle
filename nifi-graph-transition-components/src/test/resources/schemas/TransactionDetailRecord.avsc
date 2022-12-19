@@ -1,0 +1,9 @@
+{
+	"name": "TransactionDetailRecord",
+	"type": "record",
+	"fields": [
+		{ "name": "SenderLocalCurrency", "type": "string" },
+		{ "name": "AmountSent", "type": "double" },
+		{ "name": "SenderService", "type": "string", "default": "FakeMoneyService"}
+	]
+}

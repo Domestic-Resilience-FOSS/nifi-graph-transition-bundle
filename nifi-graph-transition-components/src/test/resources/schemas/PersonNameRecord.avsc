@@ -1,0 +1,8 @@
+{
+	"name": "PersonNameRecord",
+	"type": "record",
+	"fields": [
+		{ "name": "FirstName", "type": "string" },
+		{ "name": "LastName", "type": "string" }
+	]
+}

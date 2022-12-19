@@ -1,0 +1,10 @@
+{
+	"name": "LocationRecord",
+	"type": "record",
+	"fields": [
+		{ "name": "StreetAddress", "type": "string" },
+		{ "name": "City", "type": "string" },
+		{ "name": "State", "type": "string" },
+		{ "name": "Country", "type": "string" }
+	]
+}

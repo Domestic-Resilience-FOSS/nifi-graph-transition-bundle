@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "GenericPersonIdentificationNumber",
+  "namespace" : "com.boozallen.graph.transition.test",
+  "doc" : "Vertex representing an Id who's specific type cannot be inferred from the source data with high confidence .Designed for use when the source data uses multiple not-well specified Id types,",
+  "fields" : [ {
+    "name" : "PersonIdentificationValue",
+    "type" : "string",
+    "doc" : "The Id number (value) as a string.",
+    "graph_metadata" : {
+      "constant" : false,
+      "is_identifier" : true
+    }
+  },{
+    "name" : "Uuid",
+    "type" : "string",
+    "doc" : "The UUID given to the graph element.",
+    "graph_metadata" : {
+      "constant" : false,
+      "is_identifier" : false
+    }
+  }, {
+    "name" : "CreationDateTime",
+    "type" : {
+      "type" : "long",
+      "logicalType" : "timestamp-millis"
+    },
+    "doc" : "The data and time the graph element was created.",
+    "graph_metadata" : {
+      "constant" : false,
+      "is_identifier" : false
+    }
+  }]
+}

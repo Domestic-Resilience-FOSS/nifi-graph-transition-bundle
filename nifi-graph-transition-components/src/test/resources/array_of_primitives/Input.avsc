@@ -1,0 +1,31 @@
+{
+	"name": "PrimitiveArrayInput",
+	"type": "record",
+	"fields": [{
+			"name": "Sender_fullName",
+			"type": "string"
+		},
+		{
+			"name": "Sender_nicknames",
+			"type": {
+				"type": "array",
+				"items": "string"
+			}
+		},
+		{
+			"name": "Receiver_fullName",
+			"type": "string"
+		},
+		{
+			"name": "Receiver_nicknames",
+			"type": {
+				"type": "array",
+				"items": "string"
+			}
+		},
+		{
+			"type": "string",
+			"name": "message"
+		}
+	]
+}

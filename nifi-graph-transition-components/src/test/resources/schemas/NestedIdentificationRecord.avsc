@@ -1,0 +1,41 @@
+{
+  "name": "NestedIdentificationRecord",
+  "type": "record",
+  "fields": [
+    {
+      "name": "SenderPersonIdentifications",
+      "type":
+        {
+          "type": "array",
+          "items": [
+          {
+            "type": "record",
+            "name": "PersonIdentificationRecord",
+            "fields": [
+              {
+                "name": "Identification",
+                "type": ["null", "string"]
+              },
+              {
+                "name": "IdentificationType",
+                "type": ["null", "string"]
+              },
+              {
+                "name": "IdentificationLocationLocal",
+                "type": ["null", "string"]
+              },
+              {
+                "name": "IdentificationLocationRegional",
+                "type": ["null", "string"]
+              },
+              {
+                "name": "IdentificationDescription",
+                "type": ["null", "string"]
+              }
+            ]
+          }
+        ]
+        }
+    }
+  ]
+}

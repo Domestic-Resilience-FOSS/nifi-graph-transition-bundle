@@ -1,0 +1,64 @@
+{
+  "subject": "SocialMediaTransitionComplex",
+  "description": "A simple mapping of social media activity",
+  "sourceSubject": "SocialMediaActivity",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "social_media_user",
+      "vertexMappingId": "left",
+      "vertexSchemaName": "ComplexTypeTest",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/SecurityMarkings",
+          "sourcePropertyName": "/apropertythatshouldnotexist",
+          "defaultValue": "test"
+        },
+        {
+          "graphPropertyName": "/SocialMediaAccount",
+          "sourcePropertyName": "/LeftService",
+          "defaultValue": "BigCorpChat"
+        }
+      ]
+    },
+    {
+      "label": "social_media_user",
+      "vertexMappingId": "right",
+      "vertexSchemaName": "ComplexTypeTest",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/SecurityMarkings",
+          "sourcePropertyName": "/apropertythatshouldnotexist",
+          "defaultValue": "test"
+        },
+        {
+          "graphPropertyName": "/SocialMediaAccount",
+          "sourcePropertyName": "/LeftService",
+          "defaultValue": "BigCorpChat"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "left",
+      "toVertexId": "right",
+      "label": "interaction",
+      "edgeSchemaName": "SocialMediaInteraction",
+      "edgeSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/Type",
+          "sourcePropertyName": "/InteractionType"
+        },
+        {
+          "graphPropertyName": "/Count",
+          "sourcePropertyName": "/InteractionCount",
+          "defaultValue": -1
+        }
+      ]
+    }
+  ]
+}

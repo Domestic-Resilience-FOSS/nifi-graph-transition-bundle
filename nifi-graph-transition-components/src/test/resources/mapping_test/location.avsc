@@ -1,0 +1,10 @@
+{
+    "name": "AddressRecord",
+    "type": "record",
+    "fields": [
+        { "name": "street", "type": "string" },
+        { "name": "city", "type": "string" },
+        { "name": "state", "type": "string" },
+        { "name": "country", "type": "string" }
+    ]
+}

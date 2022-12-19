@@ -1,0 +1,23 @@
+{
+	"name": "PersonPhoneInput",
+	"type": "record",
+	"fields": [{
+			"name": "fullName",
+			"type": "string"
+		},
+		{
+			"name": "nicknames",
+			"type": {
+				"type": "array",
+				"items": "string"
+			}
+		},
+		{
+			"name": "phoneNumbers",
+			"type": {
+				"type": "array",
+				"items": "string"
+			}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"name": "ComplexTypeTest",
+	"type": "record",
+	"fields": [
+        {
+            "name" : "SecurityMarkings",
+            "type" : {
+              "type" : "array",
+              "items" : "string",
+              "java-class" : "java.util.Set"
+            }
+        },
+        {
+            "name" : "SocialMediaAccount",
+            "type" : "string"
+        }
+	]
+}

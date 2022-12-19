@@ -1,0 +1,21 @@
+{
+    "type": "record",
+    "name": "AssociatedLocationRecord",
+    "fields": [
+        { "name": "daysAt", "type": "int" },
+        { "name": "purpose", "type": { "type": "enum", "name": "PurposeEnum", "symbols": [ "HOME", "WORK", "VACATION" ] } },
+        {
+            "name": "address",
+            "type": {
+                "name": "AddressRecord",
+                "type": "record",
+                "fields": [
+                    { "name": "street", "type": "string" },
+                    { "name": "city", "type": "string" },
+                    { "name": "state", "type": "string" },
+                    { "name": "country", "type": "string" }
+                ]
+            }
+        }
+    ]
+}

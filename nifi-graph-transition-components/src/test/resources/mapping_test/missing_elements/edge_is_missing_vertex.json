@@ -1,0 +1,56 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+  "sourceSubject": "Transaction",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "person",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "required": false,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/sender_firstName"
+        }
+      ]
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "receiver",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/receiver_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/receiver_lastName"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "sender",
+      "toVertexId": "receiver",
+      "label": "transaction",
+      "edgeSchemaName": "TransactionDetailRecord",
+      "edgeSchemaVersion": 1,
+      "required": false,
+      "properties": [
+        {
+          "graphPropertyName": "/amount",
+          "sourcePropertyName": "/amount"
+        },
+        {
+          "graphPropertyName": "/when",
+          "sourcePropertyName": "/when"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "EmployeeRecord",
+    "type": "record",
+    "fields": [
+        { "name": "employeeName", "type": "string" },
+        { "name": "salary", "type": "double" },
+        { "name": "role", "type": "string" }
+    ]
+}

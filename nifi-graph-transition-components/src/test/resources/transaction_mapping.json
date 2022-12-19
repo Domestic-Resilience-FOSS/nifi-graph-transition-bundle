@@ -1,0 +1,279 @@
+{
+  "subject": "TransactionMapping",
+  "sourceSubject": "TransactionRecord",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "vertexMappingId": "ingest_entity",
+      "label": "IngestEntity",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1
+    },
+    {
+      "vertexMappingId": "sys_entity_sender",
+      "label": "SystemEntity",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1
+    },
+    {
+      "vertexMappingId": "sys_entity_receiver",
+      "label": "SystemEntity",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "sender_name",
+      "vertexSchemaName": "PersonNameRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/FirstName",
+          "sourcePropertyName": "/SenderFirstName"
+        },
+        {
+          "graphPropertyName": "/LastName",
+          "sourcePropertyName": "/SenderLastName"
+        }
+      ]
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "receiver_name",
+      "vertexSchemaName": "PersonNameRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/FirstName",
+          "sourcePropertyName": "/ReceiverFirstName"
+        },
+        {
+          "graphPropertyName": "/LastName",
+          "sourcePropertyName": "/ReceiverLastName"
+        }
+      ]
+    },
+    {
+      "label": "identifier",
+      "vertexMappingId": "sender_id",
+      "vertexSchemaName": "IdentificationRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/PhoneNumber",
+          "sourcePropertyName": "/SenderPhoneNumber"
+        },
+        {
+          "graphPropertyName": "/Email",
+          "sourcePropertyName": "/SenderEmail"
+        }
+      ]
+    },
+    {
+      "label": "identifier",
+      "vertexMappingId": "receiver_id",
+      "vertexSchemaName": "IdentificationRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/PhoneNumber",
+          "sourcePropertyName": "/ReceiverPhoneNumber"
+        },
+        {
+          "graphPropertyName": "/Email",
+          "sourcePropertyName": "/ReceiverEmail"
+        }
+      ]
+    },
+    {
+      "label": "location",
+      "vertexMappingId": "sender_location",
+      "vertexSchemaName": "LocationRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/StreetAddress",
+          "sourcePropertyName": "/SenderStreetAddress"
+        },
+        {
+          "graphPropertyName": "/City",
+          "sourcePropertyName": "/SenderCity"
+        },
+        {
+          "graphPropertyName": "/State",
+          "sourcePropertyName": "/SenderState"
+        },
+        {
+          "graphPropertyName": "/Country",
+          "sourcePropertyName": "/SenderCountry"
+        }
+      ]
+    },
+    {
+      "label": "location",
+      "vertexMappingId": "receiver_location",
+      "vertexSchemaName": "LocationRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/StreetAddress",
+          "sourcePropertyName": "/ReceiverStreetAddress"
+        },
+        {
+          "graphPropertyName": "/City",
+          "sourcePropertyName": "/ReceiverCity"
+        },
+        {
+          "graphPropertyName": "/State",
+          "sourcePropertyName": "/ReceiverState"
+        },
+        {
+          "graphPropertyName": "/Country",
+          "sourcePropertyName": "/ReceiverCountry"
+        }
+      ]
+    },
+    {
+      "label": "transaction",
+      "vertexMappingId": "transaction",
+      "vertexSchemaName": "TransactionDetailRecord",
+      "vertexSchemaVersion": 1,
+      "alwaysCreate": true,
+      "properties": [
+        {
+          "graphPropertyName": "/AmountSent",
+          "sourcePropertyName": "/AmountSent"
+        },
+        {
+          "graphPropertyName": "/SenderService",
+          "sourcePropertyName": "/SenderService"
+        },
+        {
+          "graphPropertyName": "/SenderLocalCurrency",
+          "sourcePropertyName": "/SenderLocalCurrency"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sys_entity_sender",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sys_entity_receiver",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sender_name",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "receiver_name",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sender_id",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "receiver_id",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sender_location",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "receiver_location",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "transaction",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sender_name",
+      "toVertexId": "sys_entity_sender",
+      "label": "names",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sender_id",
+      "toVertexId": "sys_entity_sender",
+      "label": "identifies",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sender_location",
+      "toVertexId": "sys_entity_sender",
+      "label": "locates",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "receiver_name",
+      "toVertexId": "sys_entity_receiver",
+      "label": "names",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "receiver_id",
+      "toVertexId": "sys_entity_receiver",
+      "label": "identifies",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "receiver_location",
+      "toVertexId": "sys_entity_receiver",
+      "label": "locates",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sys_entity_sender",
+      "toVertexId": "transaction",
+      "label": "sent",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "transaction",
+      "toVertexId": "sys_entity_receiver",
+      "label": "received",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

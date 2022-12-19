@@ -1,0 +1,67 @@
+{
+  "subject": "PrimitiveArrayMapping",
+  "sourceSubject": "PrimitiveArrayInput",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "user",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "ArrayPersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/fullName",
+          "sourcePropertyName": "/Sender_fullName"
+        },
+        {
+          "graphPropertyName": "/nicknames",
+          "sourcePropertyName": "/Sender_nicknames"
+        }
+      ]
+    },
+    {
+      "label": "user",
+      "vertexMappingId": "receiver",
+      "vertexSchemaName": "ArrayPersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/fullName",
+          "sourcePropertyName": "/Receiver_fullName"
+        },
+        {
+          "graphPropertyName": "/nicknames",
+          "sourcePropertyName": "/Receiver_nicknames"
+        }
+      ]
+    },
+    {
+      "label": "message",
+      "vertexMappingId": "message",
+      "vertexSchemaName": "OnlineMessage",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/message",
+          "sourcePropertyName": "/message"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "sender",
+      "toVertexId": "message",
+      "label": "sent",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "receiver",
+      "toVertexId": "message",
+      "label": "received",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

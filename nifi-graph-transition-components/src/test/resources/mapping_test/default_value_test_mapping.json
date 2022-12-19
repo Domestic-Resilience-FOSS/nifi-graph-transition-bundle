@@ -1,0 +1,74 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+
+  "sourceSubject": "Transaction",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "person",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/sender_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/sender_lastName"
+        },
+        {
+          "graphPropertyName": "/creationDateTime",
+          "sourcePropertyName": "/creationDateTime",
+          "defaultValue": "${now():toNumber():format('yyyy-MM-dd HH:mm:ss')}"
+        }
+      ]
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "receiver",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/receiver_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/receiver_lastName"
+        },
+        {
+          "graphPropertyName": "/creationDateTime",
+          "sourcePropertyName": "/creationDateTime",
+          "defaultValue": "${now():toNumber():format('yyyy-MM-dd HH:mm:ss')}"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "sender",
+      "toVertexId": "receiver",
+      "label": "transaction",
+      "edgeSchemaName": "TransactionDetailRecord",
+      "edgeSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/amount",
+          "sourcePropertyName": "/amount"
+        },
+        {
+          "graphPropertyName": "/when",
+          "sourcePropertyName": "/when"
+        },
+        {
+          "graphPropertyName": "/creationDateTime",
+          "sourcePropertyName": "/creationDateTime",
+          "defaultValue": "${now():toNumber():format('yyyy-MM-dd HH:mm:ss')}"
+        }
+      ]
+    }
+  ]
+}

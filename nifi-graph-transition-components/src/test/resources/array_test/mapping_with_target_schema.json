@@ -1,0 +1,63 @@
+{
+  "subject": "NestedIdentificationRecordTransition",
+  "sourceSubject": "NestedIdentificationRecord",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "identification",
+      "vertexMappingId": "identification",
+      "vertexSchemaName": "GenericPersonIdentificationNumber",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/SenderPersonIdentifications",
+      "required": true,
+      "properties": [
+        {
+          "defaultValue": "${now():toNumber():format('yyyy-MM-dd HH:mm:ss')}",
+          "graphPropertyName": "/CreationDateTime",
+          "sourcePropertyName": "/apropertythatshouldnotexist"
+        },
+        {
+          "defaultValue": "${UUID():toString()}",
+          "graphPropertyName": "/Uuid",
+          "sourcePropertyName": "/apropertythatshouldnotexist"
+        },
+        {
+          "graphPropertyName": "/PersonIdentificationValue",
+          "sourcePropertyName": "/Identification"
+        }
+      ]
+    },
+    {
+      "label": "employee",
+      "vertexMappingId": "employee",
+      "vertexSchemaName": "EmployeeRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/employeeName",
+          "sourcePropertyName": "/employeeName",
+          "defaultValue": "John Smith"
+        },
+        {
+          "graphPropertyName": "/salary",
+          "sourcePropertyName": "/salary",
+          "defaultValue": 123.4
+        },
+        {
+          "graphPropertyName": "/role",
+          "sourcePropertyName": "/role",
+          "defaultValue": "New Hire"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "employee",
+      "toVertexId": "identification",
+      "label": "has",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

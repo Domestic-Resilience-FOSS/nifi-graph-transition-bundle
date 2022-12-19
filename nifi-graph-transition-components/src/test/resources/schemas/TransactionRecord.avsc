@@ -1,0 +1,25 @@
+{
+	"type": "record",
+	"name": "TransactionRecord",
+	"fields": [
+		{ "name": "SenderFirstName", "type": "string" },
+		{ "name": "SenderLastName", "type": "string" },
+		{ "name": "SenderStreetAddress", "type": "string" },
+		{ "name": "SenderCity", "type": "string" },
+		{ "name": "SenderState", "type": "string" },
+		{ "name": "SenderCountry", "type": "string" },
+		{ "name": "SenderPhoneNumber", "type": "string" },
+		{ "name": "SenderEmail", "type": "string" },
+		{ "name": "ReceiverFirstName", "type": "string" },
+		{ "name": "ReceiverLastName", "type": "string" },
+		{ "name": "ReceiverStreetAddress", "type": "string" },
+		{ "name": "ReceiverCity", "type": "string" },
+		{ "name": "ReceiverState", "type": "string" },
+		{ "name": "ReceiverCountry", "type": "string" },
+		{ "name": "ReceiverPhoneNumber", "type": "string" },
+		{ "name": "ReceiverEmail", "type": "string" },
+		{ "name": "SenderLocalCurrency", "type": "string" },
+		{ "name": "AmountSent", "type": "double" },
+		{ "name": "SenderService", "type": "string", "default": "FakeMoneyService"}
+	]
+}

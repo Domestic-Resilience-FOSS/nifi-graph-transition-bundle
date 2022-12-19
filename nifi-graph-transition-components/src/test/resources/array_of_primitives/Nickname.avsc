@@ -1,0 +1,9 @@
+{
+	"name": "Nickname",
+	"type": "record",
+	"fields": [{
+			"name": "nickname",
+			"type": "string"
+		}
+	]
+}

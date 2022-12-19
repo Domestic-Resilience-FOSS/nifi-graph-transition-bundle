@@ -1,0 +1,19 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+  "mappedGraphNodeClasses": [
+    {
+      "label": "person",
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/sender_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName"
+        }
+      ]
+    }
+  ],
+  "mappedGraphEdgeClasses": [
+  ]
+}

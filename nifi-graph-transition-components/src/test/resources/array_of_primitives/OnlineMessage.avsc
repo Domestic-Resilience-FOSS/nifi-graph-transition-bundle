@@ -1,0 +1,10 @@
+{
+    "name": "OnlineMessageRecord",
+    "type": "record",
+    "fields": [
+        {
+            "name": "message",
+            "type": "string"
+        }
+    ]
+}

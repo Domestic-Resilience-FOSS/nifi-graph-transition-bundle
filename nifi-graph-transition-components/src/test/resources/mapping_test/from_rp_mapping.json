@@ -1,0 +1,71 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+
+  "sourceSubject": "Transaction",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "SystemEntity",
+      "vertexMappingId": "system_entity_sender",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "sender_name",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/firstName"
+        }
+      ]
+    },
+    {
+      "label": "location",
+      "vertexMappingId": "sender_location",
+      "vertexSchemaName": "AddressRecord",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/associatedLocation/address",
+      "properties": [
+      ]
+    },
+    {
+      "label": "contact",
+      "vertexMappingId": "sender_contact",
+      "vertexSchemaName": "ContactRecord",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/contact",
+      "properties": [
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "sender_name",
+      "toVertexId": "system_entity_sender",
+      "label": "names",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sender_location",
+      "toVertexId": "system_entity_sender",
+      "label": "locates",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "sender_contact",
+      "toVertexId": "system_entity_sender",
+      "label": "contacts",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

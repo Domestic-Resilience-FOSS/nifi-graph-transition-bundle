@@ -1,0 +1,76 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+  "sourceSubject": "EmploymentRecord",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "SystemEntity",
+      "vertexMappingId": "ingest_entity",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1
+    },
+    {
+      "label": "employer",
+      "vertexMappingId": "employer",
+      "vertexSchemaName": "EmployerRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/employerName",
+          "sourcePropertyName": "/companyName"
+        }
+      ]
+    },
+    {
+      "label": "employee",
+      "vertexMappingId": "employees",
+      "vertexSchemaName": "EmployeeRecord",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/employees",
+      "properties": [
+        {
+          "graphPropertyName": "/employeeName",
+          "sourcePropertyName": "/employeeName"
+        },
+        {
+          "graphPropertyName": "/salary",
+          "sourcePropertyName": "/salary"
+        },
+        {
+          "graphPropertyName": "/role",
+          "sourcePropertyName": "/role"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "employees",
+      "toVertexId": "employer",
+      "label": "employed_by",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "employer",
+      "toVertexId": "employees",
+      "label": "employs",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "employer",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "employees",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

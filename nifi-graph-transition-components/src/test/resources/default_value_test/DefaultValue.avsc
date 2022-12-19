@@ -1,0 +1,8 @@
+{
+	"name": "DefaultValue",
+	"type": "record",
+	"fields": [
+		{ "name": "Name", "type": "string" },
+		{ "name": "DefaultName", "type": "string", "default": "Default name"}
+	]
+}

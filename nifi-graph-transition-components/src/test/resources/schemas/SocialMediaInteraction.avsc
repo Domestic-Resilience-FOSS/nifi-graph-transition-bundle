@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "SocialMediaInteraction",
+    "fields": [
+        {
+            "name": "Type", "type": "string"
+        },
+        {
+            "name": "Count", "type": "long"
+        }
+    ]
+}

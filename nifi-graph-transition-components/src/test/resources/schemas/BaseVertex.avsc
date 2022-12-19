@@ -1,0 +1,6 @@
+{
+	"name": "BaseVertex",
+	"type": "record",
+	"fields": [
+	]
+}

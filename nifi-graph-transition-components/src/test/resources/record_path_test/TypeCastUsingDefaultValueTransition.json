@@ -1,0 +1,22 @@
+{
+  "subject": "TypeCastTestTransition",
+  "sourceSubject": "SimpleLongSourceRecord",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "my_node",
+      "vertexMappingId": "test_node",
+      "vertexSchemaName": "SimpleLongSourceRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/Count",
+          "sourcePropertyName": "/Count",
+          "defaultValue": "-10000"
+        }
+      ]
+    }
+  ],
+  "edges": [
+  ]
+}

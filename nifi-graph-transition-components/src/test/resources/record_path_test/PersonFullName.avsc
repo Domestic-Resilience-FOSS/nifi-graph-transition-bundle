@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"name": "PersonFullName",
+	"fields": [{
+			"name": "PersonFirstName",
+			"type": "string"
+		},
+		{
+			"name": "PersonMiddleName",
+			"type": "string"
+		},
+		{
+			"name": "PersonLastName",
+			"type": "string"
+		}
+	]
+}

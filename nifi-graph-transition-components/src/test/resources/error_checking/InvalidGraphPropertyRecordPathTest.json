@@ -1,0 +1,21 @@
+{
+  "subject": "PersonRecordPathTest",
+  "sourceSubject": "PersonFullName",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "person",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "SimplePersonName",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "\\/PersonFullName",
+          "sourcePropertyName": "concat(/PersonFirstName, ' ', /PersonMiddleName, ' ', /PersonLastName)"
+        }
+      ]
+    }
+  ],
+  "edges": [
+  ]
+}

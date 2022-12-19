@@ -1,0 +1,15 @@
+{
+    "type": "record",
+    "name": "SocialMediaUser",
+    "fields": [
+        {
+            "name": "Username", "type": "string"
+        },
+        {
+            "name": "Service", "type": "string"
+        },
+        {
+            "name": "IdentityVerified", "type": [ "null", "boolean" ]
+        }
+    ]
+}

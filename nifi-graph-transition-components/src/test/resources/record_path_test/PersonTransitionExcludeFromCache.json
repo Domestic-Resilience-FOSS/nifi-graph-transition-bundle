@@ -1,0 +1,33 @@
+{
+  "subject": "PersonRecordPathTest",
+  "sourceSubject": "PersonFullName",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "person",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "PersonFullNameExcludeFromCache",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/PersonFullName",
+          "sourcePropertyName": "concat(/PersonFirstName, ' ', /PersonMiddleName, ' ', /PersonLastName)"
+        },
+        {
+          "graphPropertyName": "/Uuid",
+          "excludeFromCache": true,
+          "sourcePropertyName": "/apropertythatshouldnotexist",
+          "defaultValue": "${UUID():toString()}"
+        },
+        {
+          "graphPropertyName": "/CreationDateTime",
+          "excludeFromCache": true,
+          "sourcePropertyName": "/apropertythatshouldnotexist",
+          "defaultValue": "${now():toNumber():format('yyyy-MM-dd HH:mm:ss')}"
+        }
+      ]
+    }
+  ],
+  "edges": [
+  ]
+}

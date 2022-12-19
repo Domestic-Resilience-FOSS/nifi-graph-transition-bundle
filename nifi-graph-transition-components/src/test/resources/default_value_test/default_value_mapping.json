@@ -1,0 +1,23 @@
+{
+  "subject": "DefaultValueMapping",
+  "description": "A simple mapping to test default value within Avro",
+  "sourceSubject": "DefaultValueSource",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "default_value_test",
+      "vertexMappingId": "left",
+      "vertexSchemaName": "DefaultValue",
+      "vertexSchemaVersion": 1,
+      "required": true,
+      "properties": [
+        {
+          "graphPropertyName": "/Name",
+          "sourcePropertyName": "/Name"
+        }
+      ]
+    }
+  ],
+  "edges": [
+  ]
+}

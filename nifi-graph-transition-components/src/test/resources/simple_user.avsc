@@ -1,0 +1,14 @@
+{
+    "name": "SimpleUser",
+    "type": "record",
+    "fields": [
+        { "name": "firstName", "type": [ "null", "string" ] },
+        { "name": "lastName", "type": [ "null", "string" ] },
+        { "name": "email", "type": [ "null", "string" ] },
+        { "name": "phoneNumber", "type": [ "null", "string" ] },
+        { "name": "homeStreet", "type": [ "null", "string" ] },
+        { "name": "homeCity", "type": [ "null", "string" ] },
+        { "name": "homeState", "type": [ "null", "string" ] },
+        { "name": "homeCountry", "type": [ "null", "string" ] }
+    ]
+}

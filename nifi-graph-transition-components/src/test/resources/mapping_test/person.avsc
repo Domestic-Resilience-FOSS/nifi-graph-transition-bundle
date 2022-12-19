@@ -1,0 +1,9 @@
+{
+    "type": "record",
+    "name": "PersonRecord",
+    "fields": [
+        { "name": "firstName", "type": "string" },
+        { "name": "lastName", "type": "string" },
+        { "name": "creationDateTime", "type": ["null", { "type": "long", "logicalType": "timestamp-millis" }]}
+    ]
+}

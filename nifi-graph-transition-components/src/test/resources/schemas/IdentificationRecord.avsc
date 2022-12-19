@@ -1,0 +1,8 @@
+{
+	"name": "IdentificationRecord",
+	"type": "record",
+	"fields": [
+		{ "name": "PhoneNumber", "type": "string" },
+		{ "name": "Email", "type": "string" }
+	]
+}

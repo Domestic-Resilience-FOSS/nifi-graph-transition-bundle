@@ -1,0 +1,10 @@
+{
+    "name": "SimplePhoneRecord",
+    "type": "record",
+    "fields": [
+        {
+            "name": "phoneNumber",
+            "type": "string"
+        }
+    ]
+}

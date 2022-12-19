@@ -1,0 +1,21 @@
+nifi-graph-transition-nar
+This work is copyright 2020 to 2022 Booz Allen Hamilton. It was created
+under contract with a US Government client and is being released under the
+Apache Software License v2 pursuant to an agreement with the client in order
+to advance the client's open source mandate.
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+******************
+Apache Software License v2
+******************
+
+ * Various Apache NiFi libraries
+ * Apache Avro
+ * OkHttp
+ * Confluent Avro Random Generator
+
+Transitive dependencies from Apache dependencies are assumed to be in compliance
+with Apache license compatibility requirements. See NiFi NOTICE file for a fuller
+and more timely list of transitive dependency licensing information.

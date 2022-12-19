@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "PersonRecord",
+    "fields": [
+        { "name": "sender_firstName", "type": "string" },
+        { "name": "sender_lastName", "type": "string" },
+        { "name": "receiver_firstName", "type": "string" },
+        { "name": "receiver_lastName", "type": "string" },
+        { "name": "amount", "type": "double" },
+        { "name": "when", "type": { "type": "long", "logicalType": "timestamp-millis" }}
+    ]
+}

@@ -1,0 +1,39 @@
+{
+	"type": "record",
+	"name": "SocialMediaActivity",
+	"fields": [
+
+		{
+			"name": "InteractionType",
+			"type": "string"
+		},
+		{
+			"name": "InteractionCount",
+			"type": "long"
+		},
+		{
+			"name": "LeftUsername",
+			"type": "string"
+		},
+		{
+			"name": "LeftService",
+			"type": "string"
+		},
+		{
+			"name": "LeftIdentityVerified",
+			"type": [ "null", "boolean" ]
+		},
+		{
+			"name": "RightUsername",
+			"type": "string"
+		},
+		{
+			"name": "RightService",
+			"type": "string"
+		},
+		{
+			"name": "RightIdentityVerified",
+			"type": [ "null", "boolean" ]
+		}
+	]
+}

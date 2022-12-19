@@ -1,0 +1,21 @@
+{
+	"type": "record",
+	"name": "PersonFullNameExcludeFromCache",
+	"fields": [{
+			"name": "PersonFullName",
+			"type": "string"
+		},
+		{
+			"name": "Uuid",
+			"type": "string"
+		},
+		{
+			"doc": "Date and time vertex was added.",
+			"name": "CreationDateTime",
+			"type": {
+				"logicalType": "timestamp-millis",
+				"type": "long"
+			}
+		}
+	]
+}

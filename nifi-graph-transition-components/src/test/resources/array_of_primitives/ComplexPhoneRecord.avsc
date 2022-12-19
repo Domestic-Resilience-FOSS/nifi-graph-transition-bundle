@@ -1,0 +1,14 @@
+{
+    "name": "ComplexPhoneNumber",
+    "type": "record",
+    "fields": [
+        {
+            "name": "phoneNumber",
+            "type": "string"
+        },
+        {
+            "name": "Uuid",
+            "type": "string"
+        }
+    ]
+}

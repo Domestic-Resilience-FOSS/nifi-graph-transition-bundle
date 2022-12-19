@@ -1,0 +1,23 @@
+{
+    "name": "EmploymentRecord",
+    "type": "record",
+    "fields": [
+        { "name": "companyName", "type": "string" },
+        { "name": "companyCountry", "type": "string" },
+        {
+            "name": "employees",
+            "type": {
+                "type": "array",
+                "items":{
+                    "name": "EmployeeRecord",
+                    "type": "record",
+                    "fields": [
+                        { "name": "employeeName", "type": "string" },
+                        { "name": "salary", "type": "double" },
+                        { "name": "role", "type": "string" }
+                   ]
+                }
+            }
+        }
+    ]
+}

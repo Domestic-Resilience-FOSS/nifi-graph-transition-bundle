@@ -1,0 +1,81 @@
+{
+  "subject": "A descriptive name that allows the user to associate the Schema to the Source Avro",
+
+  "sourceSubject": "Transaction",
+  "sourceSchemaVersion": 1,
+  "mappedGraphNodeClasses": [
+    {
+      "label": "person",
+      "vertexMappingId": "sender",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/sender_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/sender_lastName"
+        }
+      ]
+    },
+    {
+      "label": "person",
+      "vertexMappingId": "receiver",
+      "vertexSchemaName": "PersonRecord",
+      "vertexSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/firstName",
+          "sourcePropertyName": "/receiver_firstName"
+        },
+        {
+          "graphPropertyName": "/lastName",
+          "sourcePropertyName": "/receiver_lastName"
+        }
+      ]
+    }
+  ],
+  "mappedGraphEdgeClasses": [
+    {
+      "fromVertexId": 0,
+      "toVertexId": 1,
+      "label": "transaction",
+      "edgeSchemaName": "TransactionDetailRecord",
+      "edgeSchemaVersion": 1,
+      "properties": [
+        {
+          "graphPropertyName": "/amount",
+          "sourcePropertyName": "/amount"
+        },
+        {
+          "graphPropertyName": "/when",
+          "sourcePropertyName": "/when"
+        }
+      ]
+    }
+  ],
+  "simpleGraphNodes": [
+    {
+      "vertexMappingId": "ingest_entity",
+      "label": "IngestEvent"
+    }
+  ],
+  "simpleGraphEdges": [
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "sender",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "ingest_entity",
+      "toVertexId": "receiver",
+      "label": "added",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}

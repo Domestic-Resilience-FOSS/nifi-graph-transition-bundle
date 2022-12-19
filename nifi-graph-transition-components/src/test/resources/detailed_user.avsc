@@ -1,0 +1,43 @@
+{
+    "type": "record",
+    "name": "DetailedUser",
+    "fields": [
+        {
+            "name": "contact",
+            "type": {
+                "type": "record",
+                "name": "ContactRecord",
+                "fields": [
+                    { "name": "phoneNumber", "type": "string" },
+                    { "name": "email", "type": "string" }
+                ]
+            }
+        },
+        { "name": "firstName", "type": "string" },
+        { "name": "lastName", "type": "string" },
+        {
+            "name": "associatedLocation",
+            "type": {
+                "type": "record",
+                "name": "AssociatedLocationRecord",
+                "fields": [
+                    { "name": "daysAt", "type": "int" },
+                    { "name": "purpose", "type": { "type": "enum", "name": "PurposeEnum", "symbols": [ "HOME", "WORK", "VACATION" ] } },
+                    {
+                        "name": "address",
+                        "type": {
+                            "name": "AddressRecord",
+                            "type": "record",
+                            "fields": [
+                                { "name": "street", "type": "string" },
+                                { "name": "city", "type": "string" },
+                                { "name": "state", "type": "string" },
+                                { "name": "country", "type": "string" }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+	"type": "record",
+	"name": "TransactionDetailRecord",
+	"fields": [{
+			"name": "amount",
+			"type": "double"
+		},
+		{
+			"name": "when",
+			"type": {
+				"type": "long",
+				"logicalType": "timestamp-millis"
+			}
+		},
+		{
+			"name": "creationDateTime",
+			"type": ["null", {
+				"type": "long",
+				"logicalType": "timestamp-millis"
+			}]
+		}
+	]
+}

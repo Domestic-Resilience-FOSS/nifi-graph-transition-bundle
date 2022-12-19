@@ -1,0 +1,51 @@
+{
+  "subject": "PersonToPhoneNumbersTransition",
+  "sourceSubject": "PersonPhoneInput",
+  "sourceSchemaVersion": 1,
+  "vertices": [
+    {
+      "label": "user",
+      "vertexMappingId": "user",
+      "vertexSchemaName": "BaseVertex",
+      "vertexSchemaVersion": 1,
+      "properties": [
+      ]
+    },
+    {
+      "label": "nickname",
+      "vertexMappingId": "nickname",
+      "vertexSchemaName": "Nickname",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/nicknames",
+      "properties": [
+
+      ]
+    },
+    {
+      "label": "phoneNumber",
+      "vertexMappingId": "phoneNumber",
+      "vertexSchemaName": "SimplePhone",
+      "vertexSchemaVersion": 1,
+      "sourceRecordPath": "/{(()phoneNumbers+",
+      "properties": [
+
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "fromVertexId": "phoneNumber",
+      "toVertexId": "user",
+      "label": "identifies",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    },
+    {
+      "fromVertexId": "nickname",
+      "toVertexId": "user",
+      "label": "identifies",
+      "edgeSchemaName": "BaseEdge",
+      "edgeSchemaVersion": 1
+    }
+  ]
+}
