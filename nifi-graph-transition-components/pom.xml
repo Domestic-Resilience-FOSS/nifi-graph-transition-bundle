@@ -19,12 +19,12 @@ limitations under the License.-->
 	<parent>
 		<groupId>com.boozallen.graph</groupId>
 		<artifactId>nifi-graph-transition-bundle</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>0.7.5</version>
 	</parent>
 
 	
 	<artifactId>nifi-graph-transition-components</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.7.5</version>
 	<packaging>jar</packaging>
 
 	<properties>

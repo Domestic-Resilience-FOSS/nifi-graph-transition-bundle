@@ -17,11 +17,11 @@ limitations under the License.-->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.boozallen.graph</groupId>
 	<artifactId>nifi-graph-transition-bundle</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.7.5</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<revision>1.0.0-SNAPSHOT</revision>
+		<revision>0.7.5</revision>
 		<avro.version>1.10.0</avro.version>
 		<nifi.version>1.15.2</nifi.version>
 		<caffeine.version>2.8.5</caffeine.version>
